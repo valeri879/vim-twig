@@ -28,6 +28,12 @@ endif
 
 syntax case match
 
+" ------------------------
+" Enable basic HTML highlighting for static content
+" ------------------------
+syntax include @HTML syntax/html.vim
+syntax region twigHTML start=+^+ end=+$+ contains=@HTML keepend
+
 " Twig template built-in tags and parameters (without filter, macro, is and
 " raw, they have special treatment)
 syn keyword twigStatement containedin=twigVarBlock,twigTagBlock,twigNested contained and if else in not or recursive as import
